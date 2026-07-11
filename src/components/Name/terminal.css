@@ -1,0 +1,149 @@
+.terminal {
+    position: relative;
+    width: min(90vw, 1400px);
+    margin: auto;
+
+    animation: terminalAppear 1.2s ease;
+}
+
+.terminal-svg {
+    width: 100%;
+    display: block;
+
+    filter: drop-shadow(0 10px 30px rgba(137, 113, 86, 0.12));
+}
+
+.terminal-content {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    pointer-events: none;
+}
+
+.machine {
+    display: inline-block;
+
+    font-family: "Courier New", monospace;
+    font-size: clamp(1.4rem, 3vw, 3rem);
+    font-weight: 600;
+
+    color: #897156;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    width: 0;
+    border-right: 3px solid #897156;
+
+    animation:
+        typing 3s steps(32) forwards,
+        hideCursor 0s 3s forwards infinite,
+        glow 2.5s ease-in-out infinite;
+}
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.machine-under{
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    overflow:hidden;
+
+    width:0;
+    white-space:nowrap;
+
+    font-family:"Courier New", monospace;
+    font-size:clamp(.9rem,1.5vw,1.35rem);
+
+    color:#897156;
+
+    border-right:2px solid #897156;
+
+    animation:
+        typingUnder 2.5s steps(50) forwards ,
+        cursor .8s step-end infinite;
+
+    animation-delay:3.3s;
+}
+
+.machine-under a{
+
+    color:inherit;
+    text-decoration:none;
+
+    transition:.25s;
+}
+
+.machine-under a:hover{
+
+    color:#6f5b44;
+    text-shadow:0 0 10px rgba(137,113,86,.35);
+
+    transform:translateY(-2px);
+}
+
+.machine-under span{
+    opacity:.6;
+}
+@keyframes typingUnder {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 65ch;
+    }
+}
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 14ch;
+    }
+}
+
+@keyframes cursor {
+
+    50% {
+        border-color: transparent;
+    }
+}
+
+@keyframes glow {
+
+    0%,100% {
+        text-shadow:
+            0 0 8px rgba(137,113,86,.15),
+            0 0 18px rgba(137,113,86,.08);
+    }
+
+    50% {
+        text-shadow:
+            0 0 18px rgba(137,113,86,.35),
+            0 0 30px rgba(137,113,86,.18);
+    }
+}
+
+@keyframes terminalAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
