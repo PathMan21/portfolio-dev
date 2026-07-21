@@ -1,0 +1,43 @@
+.background-experience{
+    min-height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container-exp{
+    display:flex;
+    gap:40px;
+}
+
+.card {
+    background: transparent;
+    border: #333 solid;
+    border-radius: 8px;
+    overflow: hidden;
+    color: #00ff88;
+    font-family: "Fira Code", monospace;
+}
+
+.terminal-bar {
+    height: 32px;
+    border-bottom: #333 solid;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red { background: #ff5f57; }
+.yellow { background: #ffbd2e; }
+.green { background: #28c840; }
+
+.terminal-content {
+    padding: 15px;
+}
