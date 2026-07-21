@@ -17,13 +17,19 @@ const Experience = () => {
             image: "",
             lien: "lien"
         },
+                {
+            id: "exp-1",
+            content: "lorem ipsum",
+            image: "",
+            lien: "lien"
+        },
         
     ]
     const positions = [
 
     { top: "10%", left: "20%", rotate: "-3deg" },
-    { top: "40%", left: "55%", rotate: "7deg" },
-    { top: "70%", left: "10%", rotate: "-8deg" },
+    { top: "20%", left: "50%", rotate: "7deg" },
+    { top: "55%", left: "26%", rotate: "-10deg" },
     { top: "65%", left: "55%", rotate: "2deg" },
 ];
     return (
