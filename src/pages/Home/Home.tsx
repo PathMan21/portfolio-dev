@@ -2,7 +2,7 @@ import Terminal from "../../components/Name/Name";
 import Name from "../../components/Name/Name";
 import Contact
  from "../Contact/Contact";
-import Experience from "../Experience/Experience";
+import Projet from "../Projet/Projet";
 import Skill from "../Skill/Skill";
 import "./Home.css"
 
@@ -15,7 +15,7 @@ function Home() {
         <Terminal />
       </div>
       
-        <Experience/>
+        <Projet/>
         
         <Skill/>
         

@@ -1,4 +1,4 @@
-.background-experience {
+.background-projet {
     min-height: 80vh;
     position: relative;
     overflow: hidden;
@@ -7,7 +7,7 @@
 .container-exp {
     position: relative;
     width: 100%;
-    height: 80vh;
+    height: 90vh;
 }
 
 .card {
@@ -15,7 +15,7 @@
     border: #333 solid;
     border-radius: 8px;
     overflow: hidden;
-    color: #00ff88;
+    color: #000000;
     font-family: "Fira Code", monospace;
     background: rgba(255, 255, 255, 0.03);
     border-radius: 16px;
@@ -23,6 +23,14 @@
     backdrop-filter: blur(2.4px);
     -webkit-backdrop-filter: blur(2.4px);
     border: 1px solid rgb(86, 78, 78);
+}
+
+
+.card:hover .terminal-content {
+    opacity: 1;
+}
+.card-header {
+    color: #333;
 }
 
 .terminal-bar {
@@ -53,5 +61,23 @@
 }
 
 .terminal-content {
+
     padding: 15px;
+    color: black;    
+    opacity: 0;
+    transition: opacity .25s;    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align : left;
+
+    padding: 40px 10px;
+}
+
+.project-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
