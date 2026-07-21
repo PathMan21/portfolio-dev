@@ -10,17 +10,34 @@ const Experience = () => {
             content: "lorem ipsum",
             image: "",
             lien: "lien"
+        },        
+        {
+            id: "exp-1",
+            content: "lorem ipsum",
+            image: "",
+            lien: "lien"
         },
         
     ]
+    const positions = [
+
+    { top: "10%", left: "20%", rotate: "-3deg" },
+    { top: "40%", left: "55%", rotate: "7deg" },
+    { top: "70%", left: "10%", rotate: "-8deg" },
+    { top: "65%", left: "55%", rotate: "2deg" },
+];
     return (
         <div className="background-experience">
             <div id="experience" className="container-exp">
                 {
 
-                    ArrayExp.map(element => {
+                    ArrayExp.map((element, i) => {
                         return (
-                        <motion.div
+                        <motion.div        
+                        style={{
+                                position: "absolute",
+                                ...positions[i],
+                            }}
                             className="card"
                             initial={{ width: 280, height: 40 }}
                             whileHover={{

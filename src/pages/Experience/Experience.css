@@ -1,13 +1,13 @@
-.background-experience{
-    min-height:80vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+.background-experience {
+    min-height: 80vh;
+    position: relative;
+    overflow: hidden;
 }
 
-.container-exp{
-    display:flex;
-    gap:40px;
+.container-exp {
+    position: relative;
+    width: 100%;
+    height: 80vh;
 }
 
 .card {
@@ -17,11 +17,17 @@
     overflow: hidden;
     color: #00ff88;
     font-family: "Fira Code", monospace;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.4px);
+    -webkit-backdrop-filter: blur(2.4px);
+    border: 1px solid rgb(86, 78, 78);
 }
 
 .terminal-bar {
     height: 32px;
-    border-bottom: #333 solid;
+    border-bottom: 1px solid rgb(86, 78, 78);
     display: flex;
     align-items: center;
     padding: 0 10px;
@@ -34,9 +40,17 @@
     border-radius: 50%;
 }
 
-.red { background: #ff5f57; }
-.yellow { background: #ffbd2e; }
-.green { background: #28c840; }
+.red {
+    background: #ff5f57;
+}
+
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #28c840;
+}
 
 .terminal-content {
     padding: 15px;
