@@ -13,16 +13,6 @@
     filter: drop-shadow(0 10px 30px rgba(137, 113, 86, 0.12));
 }
 
-.terminal-content {
-    position: absolute;
-    inset: 0;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    pointer-events: none;
-}
 
 .machine {
     display: inline-block;
@@ -146,4 +136,16 @@
         opacity: 1;
         transform: translateY(0) scale(1);
     }
+}
+
+.terminal-general {
+        position: absolute;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    pointer-events: none;
+    padding: 15px;
 }

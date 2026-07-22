@@ -108,7 +108,7 @@ function Terminal() {
         />
       </motion.svg>
 
-<div className="terminal-content">
+<div className="terminal-general">
   <div className="hero-text">
     <h1 className="machine">
       Manon Lafosse
