@@ -29,6 +29,9 @@
 .card:hover .terminal-content {
     opacity: 1;
 }
+.card:hover .terminal-title {
+    opacity: 1;
+}
 .card-header {
     color: #333;
 }
@@ -71,7 +74,13 @@
     align-items: flex-start;
     text-align : left;
 
-    padding: 40px 10px;
+    padding: 10px 10px;
+}
+
+.terminal-title {
+color: black;    
+    opacity: 0;
+    transition: opacity .25s;    
 }
 
 

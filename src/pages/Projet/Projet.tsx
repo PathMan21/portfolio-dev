@@ -8,7 +8,8 @@ const Projet = () => {
         {
             id: "exp-1",
             title: "be-curious",
-            content: `Projet de fin d'année de Master 2 - Le projet be-curious est une plateforme de veille technique d'apprentissage personnalisée.
+            content: `Plateforme de veille, offrant aux utilisateurs la possibilité d'avoir des contenus divers sur leurs centre d'intéret précis. 
+            Comme par exemple - la médecine, la robotique, l'histoire de l'art..
                         `,
             image: beCuriousImg,
             lien: "https://be-curious.fr/home"
@@ -31,7 +32,7 @@ const Projet = () => {
     ]
     const positions = [
 
-        { top: "10%", left: "20%", rotate: "-3deg" },
+        { top: "5%", left: "25%", rotate: "-3deg" },
         { top: "20%", left: "60%", rotate: "7deg" },
         { top: "50%", left: "26%", rotate: "-10deg" },
         { top: "65%", left: "55%", rotate: "2deg" },
@@ -50,10 +51,10 @@ const Projet = () => {
                                         ...positions[i],
                                     }}
                                     className="card"
-                                    initial={{ width: 380, height: 40 }}
+                                    initial={{ width: 480, height: 40 }}
                                     whileHover={{
-                                        width: 500,
-                                        height: 350,
+                                        width: 480,
+                                        height: 400,
                                     }}
                                     transition={{ duration: 0.35 }}
                                 >
@@ -63,7 +64,11 @@ const Projet = () => {
                                         <span className="dot green"></span>
                                         $ cat project : {element.title}.txt
                                     </div>
-
+                                    <motion.div
+                                        transition={{ delay: 0.2 }}
+                                        className="terminal-title"
+                                    >
+                                        <h2>{element.title}</h2></motion.div>
                                     <motion.div
                                         transition={{ delay: 0.2 }}
                                         className="terminal-content"
@@ -71,13 +76,14 @@ const Projet = () => {
 
 
                                         <p>$ {element.content}</p>
-                                        <img
+  <img
                                             src={element.image}
                                             alt={element.title}
                                             className="project-image"
-                                        />
+                                        /> 
                                     </motion.div>
-                                </motion.div></a>
+                                    </motion.div>
+                                </a>
                         )
                     })
                 }
