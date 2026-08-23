@@ -1,0 +1,96 @@
+.skill-line {
+    width: 50%;
+    margin: 0 auto;
+    height: 12px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-arrow {
+    background: transparent;
+    border: 2px solid #333;
+    color: #333;
+
+    border-radius: 50%;
+
+    font-size: 22px;
+
+    transition: .3s ease;
+}
+
+
+
+
+.skill-progress {
+    height: 100%;
+    border-radius: 10px;
+}
+
+.skill-navigation {
+    display: grid;
+    grid-template-columns: 20px 400px 20px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.skill-navigation button {
+    background-color: transparent;
+    font-weight: bold;
+    border: transparent;
+}
+
+
+.container-skill {
+    position: relative;
+    width: 100%;
+
+    margin: 10vh auto 0;
+    text-align: center;    animation: blur-in linear both;
+      animation-timeline: view();
+}
+
+.container-skill h2 {
+    font-weight: 600;
+
+    font-family: "Courier New", monospace;
+
+}
+
+.label {
+    font-family: monospace;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 0.4px;
+}
+
+@media (max-width: 767px) {
+    .container-skill {
+        width: calc(100% - 24px);
+        height: auto;
+        min-height: 70vh;
+        margin: 8vh auto 0;
+    }
+
+    .skill-navigation {
+        width: 100%;
+        grid-template-columns: 40px minmax(0, 1fr) 40px;
+        align-items: center;
+    }
+
+    .skill-navigation h2 {
+        min-width: 0;
+        text-align: center;
+        font-size: 1.25rem;
+        overflow-wrap: anywhere;
+    }
+
+    .skill-line {
+        width: 100%;
+    }
+}

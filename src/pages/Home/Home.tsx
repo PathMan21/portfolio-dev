@@ -5,7 +5,7 @@ import Contact
 import Projet from "../Projet/Projet";
 import Skill from "../Skill/Skill";
 import "./Home.css"
-
+import AboutMe from "../AboutMe/AboutMe";
 
 function Home() {
   return (
@@ -14,7 +14,8 @@ function Home() {
       <div className="background">
         <Terminal />
       </div>
-      
+        <AboutMe/>
+
         <Projet/>
         
         <Skill/>

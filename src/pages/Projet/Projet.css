@@ -1,7 +1,8 @@
 .background-projet {
     min-height: 80vh;
     position: relative;
-    overflow: hidden;
+    overflow: hidden;    animation: blur-in linear both;
+      animation-timeline: view();
 }
 
 .container-exp {
@@ -24,6 +25,8 @@
     -webkit-backdrop-filter: blur(2.4px);
     border: 1px solid rgb(86, 78, 78);
 }
+
+
 
 
 .card:hover .terminal-content {
@@ -90,4 +93,37 @@ color: black;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 15px;
+}
+
+@media (max-width: 767px) {
+    .background-projet {
+        min-height: auto;
+        padding: 24px 0;
+    }
+
+    .container-exp {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 12px;
+        box-sizing: border-box;
+    }
+
+    .card {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 180px;
+        box-sizing: border-box;
+    }
+
+    .terminal-bar {
+        min-height: 32px;
+        height: auto;
+        flex-wrap: wrap;
+        padding: 8px 10px;
+    }
 }

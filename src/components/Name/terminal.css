@@ -3,6 +3,8 @@
     width: min(90vw, 1400px);
     margin: auto;
 
+    animation: blur-in linear both;
+      animation-timeline: view();
     animation: terminalAppear 1.2s ease;
 }
 
@@ -148,4 +150,37 @@
 
     pointer-events: none;
     padding: 15px;
+}
+
+@media (max-width: 767px) {
+    .terminal {
+        width: calc(100vw - 24px);
+    }
+
+    .terminal-general {
+        padding: 10px;
+    }
+
+    .hero-text {
+        gap: 14px;
+        max-width: 100%;
+    }
+
+    .machine {
+        max-width: 100%;
+        font-size: clamp(1.2rem, 7vw, 2rem);
+    }
+
+    .machine-under {
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        flex-wrap: wrap;
+        white-space: normal;
+        overflow: visible;
+        font-size: .9rem;
+        line-height: 1.6;
+        border-right: 0;
+        animation: none;
+    }
 }
