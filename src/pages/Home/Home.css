@@ -1,5 +1,4 @@
 .background {
-    min-height: 100vh;
 
     display: flex;
     justify-content: center;
@@ -24,4 +23,62 @@
     100% {
         background-position: 0% 50%;
     }
+}
+
+.grid-container {
+    display: grid;
+
+    grid-template-columns: 220px minmax(0, 700px);
+    gap: 50px;
+
+    max-width: 1000px;
+
+    margin: auto;
+    padding: 40px 20px;
+
+    align-items: start;
+}
+
+
+.summary {
+    position: sticky;
+    top: 32px;
+    padding: 18px 0;
+    border-top: 1px solid rgba(51, 51, 51, 0.4);
+    border-bottom: 1px solid rgba(51, 51, 51, 0.4);
+    text-align: left;
+}
+
+.summary-label {
+    margin: 0 0 16px;
+    color: #897156;
+    font-family: "Courier New", monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.summary nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.summary a {
+    color: #333;
+    font-family: "Courier New", monospace;
+    text-decoration: none;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.summary a::before {
+    content: "-> ";
+    color: #897156;
+}
+
+.summary a:hover,
+.summary a:focus-visible {
+    padding-left: 6px;
+    color: #897156;
 }
