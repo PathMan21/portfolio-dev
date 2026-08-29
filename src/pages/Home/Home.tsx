@@ -6,10 +6,12 @@ import Projet from "../Projet/Projet";
 import Skill from "../Skill/Skill";
 import "./Home.css"
 import AboutMe from "../AboutMe/AboutMe";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+// import { scrollIntoView } from "seamless-scroll-polyfill";
 
 const Home = () => {
     const [activeSection, setActiveSection] = useState("about");
+    const sectionOrder = ["about", "projects", "skills", "contact"];
 
     const sections = {
         about: <AboutMe />,
@@ -17,6 +19,43 @@ const Home = () => {
         skills: <Skill />,
         contact: <Contact />,
     };
+
+
+    useEffect(() => {
+    const handleScroll = (event: WheelEvent) => {
+        const currentIndex = sectionOrder.indexOf(activeSection);
+
+        const nextIndex =
+        event.deltaY > 0
+            ? currentIndex + 1
+            : currentIndex - 1;
+
+        const boundedIndex = Math.min(
+        Math.max(nextIndex, 0),
+        sectionOrder.length - 1
+        );
+
+        if (boundedIndex !== currentIndex) {
+        const nextSection = sectionOrder[boundedIndex];
+
+        const element = document.getElementById(nextSection);
+        setTimeout(function () {
+            element?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });        
+            setActiveSection(nextSection);
+
+        }, 100);
+        }
+    };
+
+    window.addEventListener("wheel", handleScroll);
+
+    return () => {
+        window.removeEventListener("wheel", handleScroll);
+    };
+    }, [activeSection]);
 
     return (
         <div>

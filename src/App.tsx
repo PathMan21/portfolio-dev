@@ -12,25 +12,6 @@ import '../src/App.css';
 function App() {
 
   let bodyRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-
-    const handleScroll = () => {    console.log("i scroll");
-
-      // const scroll = window.scrollY;
-      // const rotate = scroll * 0.1;
-
-      //   if (bodyRef.current) {
-      //       bodyRef.current.style.transform =
-      //           `rotate(${rotate}deg)`;
-      //   }
-    }
-        window.addEventListener("scroll", handleScroll);
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-  }, []);
-
 
   return (
     <BrowserRouter>
