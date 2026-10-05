@@ -21,7 +21,6 @@ const AboutMe = () => {
                 de mon mastère de développement web.
                 J'apprécie tout type de projet, et je suis toujours en recherche d'apprendre plus !
             </div>
-            <button className="button-74" role="button">Téléchargez mon CV !</button>
 
         </div>
 

@@ -1,60 +1,137 @@
-.container-cont {
-    position: relative;
-    margin: auto;
-    min-height: 50vh;
-    height: auto;    
-    animation: blur-in linear both;
-      animation-timeline: view();
 
+/* =========================
+   INFORMATIONS
+========================= */
+
+.container-contact-cust h3 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #222;
+    margin-bottom: 25px;
 }
 
-.container-form {
-    max-width: 80vh;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    
+.container-contact-cust p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #777;
+    margin-bottom: 0;
 }
 
 
-.col-3 {
-    
-    float: left;
-    width: inherit;
-    margin: 40px 3%;
-    position: relative;
+/* =========================
+   FORMULAIRE
+========================= */
+
+.container-contact-cust form {
+    margin-top: 35px;
 }
 
-input[type="text"] {
-    font: 15px/24px "Lato", Arial, sans-serif;
-    color: #333;
+.container-contact-cust .form-group {
+    margin-bottom: 20px;
+}
+
+.container-contact-cust .form-control {
     width: 100%;
-    box-sizing: border-box;
-    letter-spacing: 1px;
-}
-input[type="text"]:focus{outline: none;}
+    height: 50px;
 
+    padding: 10px 15px;
 
-.effect-1,
-.effect-2,
-.effect-3 {
-    border: 0;
-    padding: 7px 0;
-    border-bottom: 1px solid #ccc;
-}
+    font-size: 14px;
+    color: #555;
 
+    background-color: #fff;
 
-.effect-1~.focus-border {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #4caf50;
-    transition: 0.4s;
+    border: 1px solid #e6e6e6;
+    border-radius: 0;
+
+    box-shadow: none;
+
+    transition: border-color 0.2s ease;
 }
 
-.effect-1:focus~.focus-border {
-    width: 100%;
-    transition: 0.4s;
+
+/* TEXTAREA */
+
+.container-contact-cust textarea.form-control {
+    height: 150px;
+    resize: vertical;
+}
+
+
+/* PLACEHOLDER */
+
+.container-contact-cust .form-control::placeholder {
+    color: #999;
+    opacity: 1;
+}
+
+
+/* FOCUS */
+
+.container-contact-cust .form-control:focus {
+    border-color: #999;
+    outline: none;
+    box-shadow: none;
+}
+
+
+/* =========================
+   BOUTON
+========================= */
+
+.container-contact-cust .btn-primary {
+    background-color: #222;
+    border-color: #222;
+
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 400;
+
+    padding: 12px 25px;
+
+    border-radius: 0;
+
+    transition: all 0.2s ease;
+}
+
+.container-contact-cust .btn-primary:hover {
+    background-color: #000;
+    border-color: #000;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.container-contact-cust #form-message-warning,
+.container-contact-cust #form-message-success {
+    font-size: 14px;
+    color: #777;
+}
+
+.container-contact-cust #form-message-success {
+    display: none;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 767px) {
+
+    .container-contact-cust {
+        padding: 50px 20px;
+    }
+
+    .container-contact-cust .row > div {
+        margin-bottom: 30px;
+    }
+
+    .container-contact-cust form {
+        margin-top: 20px;
+    }
+
 }
