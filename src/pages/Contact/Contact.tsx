@@ -1,31 +1,22 @@
 import "../Contact/Contact.css";
 
 const Contact = () => {
+  
   return (
     <div className="container container-contact-cust">
       <div className="row mb-5">
         <div className="col">
-          <h3 className="thin-heading mb-4">New York</h3>
-          <p>
-            9757 Aspen Lane
-            <br />
-            South Richmond Hill, NY 11419
-          </p>
+          <h3 className="thin-heading mb-4">Une question ?</h3>
         </div>
 
         <div className="col">
-          <h3 className="thin-heading mb-4">Contact Info</h3>
-          <p>
-            T: +1 (291) 939 9321
-            <br />
-            E: info@mywebsite.com
-          </p>
+          <h3 className="thin-heading mb-4">Un projet ?</h3>
         </div>
       </div>
 
       <div className="row justify-content-center">
         <div className="col-md-12">
-          <h3 className="thin-heading mb-4">Message Us</h3>
+          <h3 className="thin-heading mb-4">Envoie moi un message !</h3>
 
           <form
             className="mb-5"
@@ -40,7 +31,7 @@ const Contact = () => {
                   className="form-control"
                   name="name"
                   id="name"
-                  placeholder="Your name"
+                  placeholder="Votre prénom"
                 />
               </div>
 
@@ -50,7 +41,7 @@ const Contact = () => {
                   className="form-control"
                   name="email"
                   id="email"
-                  placeholder="Email"
+                  placeholder="Votre email"
                 />
               </div>
             </div>
@@ -61,7 +52,7 @@ const Contact = () => {
                   className="form-control"
                   name="message"
                   id="message"
-                  placeholder="Write your message"
+                  placeholder="Et si on s'écrivait"
                 ></textarea>
               </div>
             </div>

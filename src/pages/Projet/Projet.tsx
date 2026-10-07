@@ -13,21 +13,7 @@ const Projet = () => {
                         `,
             image: beCuriousImg,
             lien: "https://be-curious.fr/home"
-        },
-        {
-            id: "exp-1",
-            title: "Projet",
-            content: "Donec scelerisque condimentum lectus in iaculis. Morbi aliquam mauris eu eros finibus, eu ultrices erat tincidunt. Sed neque dui, convallis id iaculis molestie",
-            image: "",
-            lien: "lien"
-        },
-        {
-            id: "exp-1",
-            title: "Projet",
-            content: "Sed quis lorem sodales, fermentum ex eu, gravida erat. Sed lectus sem, aliquam tincidunt interdum non, placerat quis leo. ",
-            image: "",
-            lien: "lien"
-        },
+        }
 
     ]
     const positions = [
