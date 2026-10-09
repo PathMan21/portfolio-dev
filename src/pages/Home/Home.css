@@ -1,6 +1,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 24px;
 }
 
 
@@ -35,18 +36,39 @@ html {
 
 .grid-container {
     display: grid;
-
-    grid-template-columns: 220px minmax(0, 700px);
-    gap: 50px;
-
-    max-width: 1000px;
-
-    margin: auto;
-    padding: 40px 20px;
-
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: clamp(24px, 5vw, 50px);
+    width: min(100%, 1100px);
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 40px 24px;
     align-items: start;
 }
 
+.grid-container main {
+    min-width: 0;
+}
+
+.content-section {
+    min-width: 0;
+    scroll-margin-top: 24px;
+}
+
+.content-section > * {
+    text-align: left;
+}
+
+.content-section h2,
+.content-section h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #333;
+}
+
+.content-section + .content-section {
+    margin-top: clamp(48px, 9vw, 112px);
+    padding-top: 24px;
+    border-top: 1px solid rgba(137, 113, 86, 0.55);
+}
 
 .summary {
     position: sticky;
@@ -57,10 +79,6 @@ html {
     text-align: left;
 }
 
-
-.grid-container main {
-    overflow: auto;
-}
 
 .summary-label {
     margin: 0 0 16px;
@@ -76,22 +94,123 @@ html {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    counter-reset: contents;
 }
 
 .summary a {
     color: #333;
-    font-family: "Courier New", monospace;
+    font-family: Georgia, "Times New Roman", serif;
     text-decoration: none;
     transition: color 0.2s ease, padding-left 0.2s ease;
 }
 
 .summary a::before {
-    content: "-> ";
+    counter-increment: contents;
+    content: "0" counter(contents) " / ";
     color: #897156;
+    font-family: "Courier New", monospace;
+    font-size: 0.8em;
 }
 
 .summary a:hover,
 .summary a:focus-visible {
     padding-left: 6px;
     color: #897156;
+}
+
+.summary a.active {
+    color: #897156;
+    font-weight: 700;
+}
+
+.Paragraph {
+    max-width: 62ch;
+    padding: 0;
+    color: #555;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    line-height: 1.8;
+    text-align: left;
+}
+
+.Paragraph h2 {
+    width: fit-content;
+    margin: 0 0 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #897156;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.Paragraph .Icone {
+    float: left;
+    padding: 0 16px 8px 0;
+    color: #897156;
+    font-size: 1.6rem;
+}
+
+.Paragraph p {
+    margin: 0;
+}
+
+.Paragraph p::first-letter {
+    float: left;
+    padding: 3px 7px 0 0;
+    color: #897156;
+    font-size: 3.2rem;
+    line-height: 0.85;
+}
+
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        padding: 24px;
+    }
+
+    .summary {
+        position: sticky;
+        z-index: 2;
+        top: 0;
+        padding: 12px 0;
+        background: rgba(254, 255, 228, 0.94);
+        backdrop-filter: blur(8px);
+    }
+
+    .summary-label {
+        margin-bottom: 8px;
+    }
+
+    .summary nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px 20px;
+    }
+
+    .content-section > * {
+        text-align: left;
+    }
+}
+
+@media (max-width: 520px) {
+    .grid-container {
+        gap: 20px;
+        padding: 16px;
+    }
+
+    .summary nav {
+        gap: 8px 14px;
+    }
+
+    .summary a {
+        font-size: 0.9rem;
+    }
+
+    .Paragraph {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .Paragraph h2 {
+        margin-bottom: 16px;
+    }
 }

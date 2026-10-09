@@ -1,5 +1,5 @@
 
-import "../Projet/Projet.css";
+import "./Projet.css";
 import { motion } from "motion/react"
 import beCuriousImg from "./assets/image.png";
 
@@ -16,58 +16,38 @@ const Projet = () => {
         }
 
     ]
-    const positions = [
-
-        { top: "5%", left: "25%", rotate: "-3deg" },
-        { top: "20%", left: "60%", rotate: "7deg" },
-        { top: "50%", left: "26%", rotate: "-10deg" },
-        { top: "65%", left: "55%", rotate: "2deg" },
-    ];
     return (
         <div className="background-projet">
-            <div id="Projet" className="container-exp">
+            <div className="container-exp">
                 {
 
-                    ArrayExp.map((element, i) => {
+                    ArrayExp.map((element) => {
                         return (
-                            <a href={element.lien}>
+                            <a href={element.lien} key={element.id}>
                                 <motion.div
-                                    style={{
-                                        position: "absolute",
-                                        ...positions[i],
-                                    }}
                                     className="card"
-                                    initial={{ width: 480, height: 40 }}
-                                    whileHover={{
-                                        width: 480,
-                                        height: 400,
-                                    }}
+                                    initial={{ opacity: 0, y: 12 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    whileHover={{ y: -2 }}
                                     transition={{ duration: 0.35 }}
                                 >
                                     <div className="terminal-bar">
                                         <span className="dot red"></span>
                                         <span className="dot yellow"></span>
                                         <span className="dot green"></span>
-                                        $ cat project : {element.title}.txt
+                                        ÉDITION PORTFOLIO — {element.title}
                                     </div>
-                                    <motion.div
-                                        transition={{ delay: 0.2 }}
-                                        className="terminal-title"
-                                    >
-                                        <h2>{element.title}</h2></motion.div>
-                                    <motion.div
-                                        transition={{ delay: 0.2 }}
-                                        className="terminal-content"
-                                    >
-
-
-                                        <p>$ {element.content}</p>
-  <img
+                                    <div className="terminal-title">
+                                        <h2>{element.title}</h2>
+                                    </div>
+                                    <div className="terminal-content">
+                                        <p>{element.content}</p>
+                                        <img
                                             src={element.image}
                                             alt={element.title}
                                             className="project-image"
-                                        /> 
-                                    </motion.div>
+                                        />
+                                    </div>
                                     </motion.div>
                                 </a>
                         )

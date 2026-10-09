@@ -1,25 +1,15 @@
 .terminal {
     position: relative;
-
-    /* Plus petit qu'avant */
-    width: min(600px, 65vw);
-
+    width: min(600px, calc(100% - 32px));
     margin: 20px auto 0;
-
-    /* Légère apparition */
     animation: terminalAppear 0.8s ease both;
 }
 
 .terminal-svg {
     display: block;
-
     width: 100%;
     height: auto;
-
-    filter:
-        drop-shadow(
-            0 8px 25px rgba(137, 113, 86, 0.10)
-        );
+    filter: drop-shadow(0 8px 25px rgba(137, 113, 86, 0.1));
 }
 
 
@@ -29,24 +19,18 @@
 
 .terminal-general {
     position: absolute;
-
     inset: 0;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     pointer-events: none;
 }
 
 .hero-text {
     display: flex;
     flex-direction: column;
-
     align-items: center;
-
-    gap: 4px;
-
+    gap: 8px;
     transform: translateY(3px);
 }
 
@@ -57,26 +41,12 @@
 
 .machine {
     margin: 0;
-
-    font-family: "Courier New", monospace;
-
-    font-size: clamp(
-        1rem,
-        2vw,
-        1.6rem
-    );
-
-    font-weight: 600;
-
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 700;
     color: #897156;
-
     white-space: nowrap;
-
-    text-shadow:
-        0 0 8px rgba(137, 113, 86, 0.15);
-
-    animation:
-        glow 3s ease-in-out infinite;
+    letter-spacing: 0.02em;
 }
 
 
@@ -86,22 +56,13 @@
 
 .machine-under {
     display: flex;
-
     align-items: center;
-
     gap: 8px;
-
     font-family: "Courier New", monospace;
-
-    font-size: clamp(
-        0.6rem,
-        1vw,
-        0.8rem
-    );
-
+    font-size: clamp(0.7rem, 1.2vw, 0.85rem);
     color: #897156;
-
-    opacity: 0.65;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
 }
 
 .machine-under span {
@@ -152,17 +113,17 @@
 ========================= */
 
 @media (max-width: 767px) {
-
     .terminal {
-        width: 92vw;
+        width: min(600px, calc(100% - 24px));
         margin-top: 12px;
     }
 
     .machine {
-        font-size: 1rem;
+        font-size: clamp(1.5rem, 7vw, 2rem);
     }
 
     .machine-under {
         font-size: 0.6rem;
+        letter-spacing: 0.12em;
     }
 }

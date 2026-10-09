@@ -1,25 +1,25 @@
 
 
 .Paragraph {
-
     max-width: 70ch;
-    white-space: wrap;
+    width: 100%;
     margin: auto;
-  text-align: center;
-        font-family:"Courier New", monospace;
-    font-size:clamp(.9rem,1.5vw,1.35rem);
+    text-align: left;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    line-height: 1.8;
     padding: 16px;
-    color:#897156;
+    color: #555;
 }
-.ParagraphContainer {      
+
+.ParagraphContainer {
     animation: blur-in linear both;
-      animation-timeline: view();
+    animation-timeline: view();
     position: relative;
     display: flex;
     flex-direction: column;
     margin: auto;
     align-items: center;
-    
     padding: inherit;
 }
 
@@ -29,15 +29,20 @@
 }
 
 .Paragraph h2 {
-        font-family:"Courier New", monospace;
-
+    width: fit-content;
+    margin: 0 0 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #897156;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
 }
 
 
 .Icone {
-  text-align: center;
-        padding: inherit;
-
+    float: left;
+    padding: 0 16px 8px 0;
+    color: #897156;
+    font-size: 1.6rem;
 }
 
 
@@ -79,12 +84,12 @@
 @media (max-width: 767px) {
   .Paragraph {
     width: auto;
-    padding: 16px 12px;
+    padding: 16px 0;
     font-size: 1rem;
   }
 
   .Paragraph h2 {
-    font-size: 1.4rem;
+    margin-bottom: 16px;
   }
 
   .button-74 {

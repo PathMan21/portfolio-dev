@@ -1,5 +1,5 @@
 .skill-line {
-    width: 50%;
+    width: min(100%, 520px);
     margin: 0 auto;
     height: 12px;
     background: #ddd;
@@ -11,11 +11,8 @@
     background: transparent;
     border: 2px solid #333;
     color: #333;
-
     border-radius: 50%;
-
     font-size: 22px;
-
     transition: .3s ease;
 }
 
@@ -29,36 +26,60 @@
 
 .skill-navigation {
     display: grid;
-    grid-template-columns: 20px 400px 20px;
+    grid-template-columns: 40px minmax(0, 420px) 40px;
     justify-content: center;
     margin: 0 auto;
+    align-items: center;
+    margin: 20px;
+    padding-bottom: 20px !important;
+    gap: 8px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(137, 113, 86, 0.55);
 }
 
 .skill-navigation button {
     background-color: transparent;
     font-weight: bold;
     border: transparent;
+    min-width: 40px;
+    min-height: 40px;
+    cursor: pointer;
 }
 
 
 .container-skill {
     position: relative;
-    width: 100%;
+    width: min(100%, 640px);
+    min-width: 0;
+    margin: 0 auto;
+    text-align: center;
+    animation: blur-in linear both;
+    animation-timeline: view();
+}
 
-    margin: 10vh auto 0;
-    text-align: center;    animation: blur-in linear both;
-      animation-timeline: view();
+.content-section>.container-skill {
+    text-align: center;
+}
+
+.container-skill>div:not(.skill-navigation) {
+    width: 100%;
+    margin: 10 auto;
+}
+
+.skill-item {
+    width: min(100%, 560px);
+    margin: 0 auto 16px;
+    text-align: center;
 }
 
 .container-skill h2 {
+    margin: 0;
     font-weight: 600;
-
-    font-family: "Courier New", monospace;
-
+    font-family: Georgia, "Times New Roman", serif;
 }
 
 .label {
-    font-family: monospace;
+    font-family: Georgia, "Times New Roman", serif;
     display: inline-block;
     font-size: 14px;
     font-weight: 600;
@@ -67,20 +88,21 @@
     border-radius: 20px;
     margin-bottom: 10px;
     letter-spacing: 0.4px;
+    max-width: 100%;
+    overflow-wrap: anywhere;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 900px) {
     .container-skill {
-        width: calc(100% - 24px);
+        width: min(100%, 640px);
         height: auto;
-        min-height: 70vh;
-        margin: 8vh auto 0;
+        min-height: 0;
+        margin: 0 auto;
     }
 
     .skill-navigation {
         width: 100%;
         grid-template-columns: 40px minmax(0, 1fr) 40px;
-        align-items: center;
     }
 
     .skill-navigation h2 {
@@ -90,7 +112,7 @@
         overflow-wrap: anywhere;
     }
 
-    .skill-line {
-        width: 100%;
+    .skill-item {
+        padding: 0 8px;
     }
 }

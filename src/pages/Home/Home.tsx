@@ -1,5 +1,4 @@
 import Terminal from "../../components/Name/Name";
-import Name from "../../components/Name/Name";
 import Contact
   from "../Contact/Contact";
 import Projet from "../Projet/Projet";
@@ -9,9 +8,10 @@ import AboutMe from "../AboutMe/AboutMe";
 import { useEffect, useState } from "react";
 // import { scrollIntoView } from "seamless-scroll-polyfill";
 
+const sectionOrder = ["about", "projects", "skills", "contact"] as const;
+
 const Home = () => {
     const [activeSection, setActiveSection] = useState("about");
-    const sectionOrder = ["about", "projects", "skills", "contact"];
 
     const sections = {
         about: <AboutMe />,
@@ -22,40 +22,26 @@ const Home = () => {
 
 
     useEffect(() => {
-    const handleScroll = (event: WheelEvent) => {
-        const currentIndex = sectionOrder.indexOf(activeSection);
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const visibleSection = entries
+                    .filter((entry) => entry.isIntersecting)
+                    .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-        const nextIndex =
-        event.deltaY > 0
-            ? currentIndex + 1
-            : currentIndex - 1;
-
-        const boundedIndex = Math.min(
-        Math.max(nextIndex, 0),
-        sectionOrder.length - 1
+                if (visibleSection) {
+                    setActiveSection(visibleSection.target.id);
+                }
+            },
+            { rootMargin: "-20% 0px -60% 0px", threshold: [0, 0.25, 0.5] }
         );
 
-        if (boundedIndex !== currentIndex) {
-        const nextSection = sectionOrder[boundedIndex];
+        sectionOrder.forEach((id) => {
+            const section = document.getElementById(id);
+            if (section) observer.observe(section);
+        });
 
-        const element = document.getElementById(nextSection);
-        setTimeout(function () {
-            element?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-            });        
-            setActiveSection(nextSection);
-
-        }, 100);
-        }
-    };
-
-    window.addEventListener("wheel", handleScroll);
-
-    return () => {
-        window.removeEventListener("wheel", handleScroll);
-    };
-    }, [activeSection]);
+        return () => observer.disconnect();
+    }, []);
 
     return (
         <div>
@@ -74,32 +60,32 @@ const Home = () => {
 
                         <a
                             href="#about"
-                            onClick={() => setActiveSection("about")}
                             className={activeSection === "about" ? "active" : ""}
+                            aria-current={activeSection === "about" ? "location" : undefined}
                         >
                             À propos
                         </a>
 
                         <a
                             href="#projects"
-                            onClick={() => setActiveSection("projects")}
                             className={activeSection === "projects" ? "active" : ""}
+                            aria-current={activeSection === "projects" ? "location" : undefined}
                         >
                             Projets
                         </a>
 
                         <a
                             href="#skills"
-                            onClick={() => setActiveSection("skills")}
                             className={activeSection === "skills" ? "active" : ""}
+                            aria-current={activeSection === "skills" ? "location" : undefined}
                         >
                             Compétences
                         </a>
 
                         <a
                             href="#contact"
-                            onClick={() => setActiveSection("contact")}
                             className={activeSection === "contact" ? "active" : ""}
+                            aria-current={activeSection === "contact" ? "location" : undefined}
                         >
                             Contact
                         </a>
@@ -108,9 +94,11 @@ const Home = () => {
                 </aside>
 
                 <main>
-                    <div className="content-section">
-                        {sections[activeSection as keyof typeof sections]}
-                    </div>
+                    {sectionOrder.map((id) => (
+                        <section className="content-section" id={id} key={id}>
+                            {sections[id]}
+                        </section>
+                    ))}
                 </main>
 
             </div>
