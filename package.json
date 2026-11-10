@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/PathMan21/portfolio-dev",
+  "homepage": "https://pathman21.github.io/portfolio-dev",
   "dependencies": {
     "@emailjs/browser": "^5.0.2",
     "@fortawesome/free-brands-svg-icons": "^7.3.1",
